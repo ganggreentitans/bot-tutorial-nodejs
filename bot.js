@@ -34,7 +34,7 @@ function respond() {
   }
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/som/rules");
+    postMessage("http://daddyleagues.com/MWO17/rules");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
