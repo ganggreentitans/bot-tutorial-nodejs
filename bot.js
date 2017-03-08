@@ -34,12 +34,12 @@ function respond() {
   }
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/som/rules");
+    postMessage("http://daddyleagues.com/MWO17/rules");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/som/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/MWO17/teams"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
@@ -92,7 +92,7 @@ function respond() {
   }
   else if(request.text && botRegexStandings.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/som/standings");
+    postMessage("http://daddyleagues.com/MWO17/standings/league");
     this.res.end();
   }
   else {
