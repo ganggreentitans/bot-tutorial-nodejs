@@ -57,7 +57,7 @@ function respond() {
   } 
   else if(request.text && botRegexSch.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.daddyleagues.com/som/schedules");
+    postMessage("http://daddyleagues.com/MWO17/schedules");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
