@@ -29,7 +29,7 @@ function respond() {
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
+    postMessage("https://uproxx.files.wordpress.com/2014/11/buttfumble-2.gif?w=650");
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
