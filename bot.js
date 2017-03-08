@@ -24,7 +24,7 @@ function respond() {
   } 
   else if(request.text && botRegexCha.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://peterandsharda.com/wp-includes/js/imgareaselect/hulk-hogan-gif-tumblr-i11.gif");
+    postMessage("https://38.media.tumblr.com/4a2aebac645e0502f6296738b0553d99/tumblr_msxmrsVPoE1ql0k28o1_500.gif");
     this.res.end();
   } 
   else if(request.text && botRegexAd.test(request.text)) {
