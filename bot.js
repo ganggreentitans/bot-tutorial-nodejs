@@ -8,7 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i; botRegexCha = /^\/champ/; botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botLeg = /^\/legdrop/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSch = /^\/schedule/; botRegexSh = /^\/shrug/;
-      botRegexWk = /^\/users/; botRegexCC = /^\/cc/; botRegexFM = /^\/forum/; botRegexStandings = /^\/standings/;
+      botRegexWk = /^\/users/; botRegexNew = /^\/news/; botRegexFM = /^\/forum/; botRegexStandings = /^\/standings/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -80,9 +80,9 @@ function respond() {
     postMessage("https://s-media-cache-ak0.pinimg.com/originals/1d/90/f1/1d90f121643bb591dfebc7cdc61e8eca.gif");
     this.res.end();
   }
-  else if(request.text && botRegexCC.test(request.text)) {
+  else if(request.text && botRegexNew.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/851x1184.jpeg.330228901f684b0cb46cd1cef6953923");
+    postMessage("http://profootballtalk.nbcsports.com/");
     this.res.end();
   }
   else if(request.text && botRegexFM.test(request.text)) {
