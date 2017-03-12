@@ -5,10 +5,11 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i; botRegexCha = /^\/champ/; botRegexRules = /^\/rules/
-      botRegexAd=/^\/advance/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botLeg = /^\/legdrop/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSch = /^\/schedule/; botRegexSh = /^\/shrug/;
-      botRegexWk = /^\/users/; botRegexNew = /^\/news/; botRegexFM = /^\/forum/; botRegexStandings = /^\/standings/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/benice/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/superbowl/; botRegexSh = /^\/shrug/; botRegexWk = /^\/contacts/;
+      botRegexRu = /^\/rules/; botRegexYu = /^\/youtube/i; botRegexSc = /^\/schedule/; botRegexSt = /^\/standings/; botRegexFo = /^\/forum/;
+      botRegexGoat = /^\/goat/; botRegexZach = /^\/lyin/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -19,34 +20,39 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/MWO17/teams"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/mwo17/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
-  else if(request.text && botRegexCha.test(request.text)) {
+  else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://38.media.tumblr.com/4a2aebac645e0502f6296738b0553d99/tumblr_msxmrsVPoE1ql0k28o1_500.gif");
+    postMessage("https://i.imgur.com/B5BSVqH.png");
     this.res.end();
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://uproxx.files.wordpress.com/2014/11/buttfumble-2.gif?w=650");
+    postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
     this.res.end();
   }
-  else if(request.text && botRegexRules.test(request.text)) {
+  else if(request.text && botRegexYub.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/MWO17/rules");
+    postMessage("http://www.quickmeme.com/img/9f/9f3720469d1ce6c2d20130ed0750935a394df80ffcddec6d16e091d95efea854.jpg");
+    this.res.end();
+  } 
+  else if(request.text && botRegexGTA.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://teesbox.com/image/cache/data/be-nice-or-fuck-off/be-nice-or-fuck-off-346x410.png");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/MWO17/teams"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/mwo17/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/MWO17/players"+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/mwo17/players?name="+rep+"&position=all&team=all");
     this.res.end();
   }  
 
@@ -55,9 +61,9 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   } 
-  else if(request.text && botRegexSch.test(request.text)) {
+  else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/MWO17/schedules");
+    postMessage("http://daddyleagues.com/mwo17/");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
@@ -67,7 +73,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/som/forum/topic/28916");
+    postMessage("http://daddyleagues.com/mwo17/");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -75,24 +81,44 @@ function respond() {
     postMessage("OBJ*");
     this.res.end();
   } 
-  else if(request.text && botLeg.test(request.text)) {
+  else if(request.text && botDuck.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://s-media-cache-ak0.pinimg.com/originals/1d/90/f1/1d90f121643bb591dfebc7cdc61e8eca.gif");
+    postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
+    this.res.end();
+  } 
+  else if(request.text && botRegexRu.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/mwo17/rules");
     this.res.end();
   }
-  else if(request.text && botRegexNew.test(request.text)) {
+  else if(request.text && botRegexYu.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://profootballtalk.nbcsports.com/");
+    postMessage("https://www.youtube.com/results?lclk=channel&filters=channel&search_query="+request.text.substring(9,request.text.length));
+    this.res.end();
+  } 
+  else if(request.text && botRegexSt.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/mwo17/standings/league");
     this.res.end();
   }
-  else if(request.text && botRegexFM.test(request.text)) {
+    else if(request.text && botRegexSc.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/som/forum");
+    postMessage("http://daddyleagues.com/mwo17/schedules");
     this.res.end();
   }
-  else if(request.text && botRegexStandings.test(request.text)) {
+      else if(request.text && botRegexFo.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/MWO17/standings/league");
+    postMessage("http://daddyleagues.com/mwo17/forum/");
+    this.res.end();
+  }
+         else if(request.text && botRegexGoat.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://vlsportysexycool.com/wp-content/uploads/2013/03/Curry-dance.jpg");
+    this.res.end();
+  }
+        else if(request.text && botRegexZach.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://i.groupme.com/512x512.png.86ad47f7c7204f2fad46b78069c2cff0.large");
     this.res.end();
   }
   else {
