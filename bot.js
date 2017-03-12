@@ -113,7 +113,7 @@ function respond() {
   }
          else if(request.text && botRegexGoat.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://vlsportysexycool.com/wp-content/uploads/2013/03/Curry-dance.jpg");
+    postMessage("http://sports.cbsimg.net/images/visual/whatshot/111415_StephTracker.jpg");
     this.res.end();
   }
         else if(request.text && botRegexZach.test(request.text)) {
