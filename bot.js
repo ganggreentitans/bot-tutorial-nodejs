@@ -9,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexGTA = /^\/benice/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/superbowl/; botRegexSh = /^\/shrug/; botRegexWk = /^\/contacts/;
       botRegexRu = /^\/rules/; botRegexYu = /^\/youtube/i; botRegexSc = /^\/schedule/; botRegexSt = /^\/standings/; botRegexFo = /^\/forum/;
-      botRegexGoat = /^\/goat/; botRegexZach = /^\/lyin/; botRegexHogan = /^\/boot/i; botRegexHogan2 = /(.*\s+)(.*boot)(\s+.*)/i;
+      botRegexGoat = /^\/goat/; botRegexZach = /^\/lyin/; botRegexHogan = /^\/boot/; botRegexHogan2 = /(.*\s+)(.*boot)(\s+.*)/i;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
